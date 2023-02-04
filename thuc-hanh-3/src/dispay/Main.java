@@ -30,6 +30,7 @@ public class Main {
                 case 1 -> library.addNewLibrary(addLibrary());
                 case 2 -> display();
                 case 3 -> showReturnDueDate();
+                case 0 -> System.out.println("Tạm biệt");
                 default -> System.out.println("Mời bạn nhập lại!");
             }
         } while (checkInput != 0);
@@ -54,7 +55,7 @@ public class Main {
             Student student = new Student(fullName, id, dateOfBirth, clas);
             libraryOne = new Library(student, date, limit, idBook);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
         return libraryOne;
     }

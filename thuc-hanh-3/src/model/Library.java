@@ -54,9 +54,9 @@ public class Library {
     @Override
     public String toString() {
         return "Thư viện : " +
-                " sinh viên =" + student.toString() +
+                student.toString() +
                 ", ngày mượn=" + borrowedDate +
                 ", số ngày mượn=" + limit +
-                ", mã số sách=" + idBook;
+                ", mã số sách=" + idBook+"\n";
     }
 }

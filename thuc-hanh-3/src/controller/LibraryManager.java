@@ -31,11 +31,9 @@ public class LibraryManager {
         LocalDate lastDay = now.with(TemporalAdjusters.lastDayOfMonth());
         StringBuilder builder = new StringBuilder();
         for (Library o:libraries) {
-            if (o.bookReturnDeadline().equals(lastDay)){
+            if (o.bookReturnDeadline().isEqual(lastDay)){
                 builder.append("Tên sinh viên: ").append(o.getStudent().getFullName()).
                         append("; mã số sách: ").append(o.getIdBook()).append("\n");
-            }else {
-                return "Không có sinh viên nào cần trả vào ngày cuối tháng";
             }
         }
         return builder.toString();
