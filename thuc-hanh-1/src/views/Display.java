@@ -32,7 +32,7 @@ public class Display {
             Person person = new Person(fullName, yearOfBirth, identityCardNumber);
             hotels = new Hotel(numberOfRentalDays, typeOfRoom, roomRates, person);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
         return hotels;
     }
