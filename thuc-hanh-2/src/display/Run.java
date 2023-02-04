@@ -28,7 +28,7 @@ public class Run {
             Client client = new Client(fullName, address, electricMeterCode);
             return new Receipt(client, oldIndex, newIndex);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }
