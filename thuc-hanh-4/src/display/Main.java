@@ -34,7 +34,7 @@ public class Main {
                     }
                     case 3 -> {
                         System.out.println("Danh sách các hộ trong khu phố năm nay có người mừng thượng thọ (80 tuổi):");
-                        System.out.println(town.get80());
+                        System.out.println(town.longevityHappiness());
                     }
                     case 0 -> System.exit(checkInput);
                     default -> System.out.println("Mời bạn nhập lại!");
@@ -72,6 +72,6 @@ public class Main {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-        return null;
+        return (Town) towns;
     }
 }

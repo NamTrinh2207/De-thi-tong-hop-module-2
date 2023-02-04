@@ -28,13 +28,12 @@ public class TownManager {
         return towns.toString();
     }
 
-    public ArrayList<Town> get80() {
+    public ArrayList<Town> longevityHappiness() {
         ArrayList<Town> towns1 = new ArrayList<>();
         LocalDate now = LocalDate.now();
         for (Town p : towns) {
             for (Person o : p.getPeople()) {
-                if (now.minusYears(80).isAfter(o.getDateOfBirth()) ||
-                        now.minusYears(80).isEqual(o.getDateOfBirth())) {
+                if (now.minusYears(80).isEqual(o.getDateOfBirth())) {
                     towns1.add(p);
                 }
             }
