@@ -31,9 +31,10 @@ public class TownManager {
     public ArrayList<Town> longevityHappiness() {
         ArrayList<Town> towns1 = new ArrayList<>();
         LocalDate now = LocalDate.now();
+        LocalDate test = LocalDate.ofEpochDay(now.minusYears(80).getYear());
         for (Town p : towns) {
             for (Person o : p.getPeople()) {
-                if (now.minusYears(80).isEqual(o.getDateOfBirth())) {
+                if (test.isEqual(LocalDate.ofEpochDay(o.getDateOfBirth().getYear()))) {
                     towns1.add(p);
                 }
             }
