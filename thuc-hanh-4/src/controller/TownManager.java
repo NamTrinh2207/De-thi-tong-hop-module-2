@@ -29,16 +29,16 @@ public class TownManager {
     }
 
     public ArrayList<Town> longevityHappiness() {
-        ArrayList<Town> towns1 = new ArrayList<>();
+        ArrayList<Town> townsOne = new ArrayList<>();
         LocalDate now = LocalDate.now();
-        LocalDate test = LocalDate.ofEpochDay(now.minusYears(80).getYear());
         for (Town p : towns) {
             for (Person o : p.getPeople()) {
-                if (test.isEqual(LocalDate.ofEpochDay(o.getDateOfBirth().getYear()))) {
-                    towns1.add(p);
+                if (LocalDate.ofEpochDay(now.minusYears(80).getYear()).
+                        isEqual(LocalDate.ofEpochDay(o.getDateOfBirth().getYear()))) {
+                    townsOne.add(p);
                 }
             }
         }
-        return towns1;
+        return townsOne;
     }
 }
