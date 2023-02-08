@@ -3,7 +3,6 @@ package views;
 import controller.HotelManager;
 import model.Hotel;
 import model.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -50,22 +49,17 @@ public class Display {
     }
 
     public static void checkHotelEmpty() {
-        if (hotels.isEmpty()) {
-            System.out.println("Không có phòng để xóa!");
-        } else {
             hotel.deleteByHotel();
-        }
     }
 
     public static void main(String[] args) {
         do {
             System.out.println("""
-                    Menu---------------------
-                    1. Thêm phòng cho thuê
-                    2. Danh sách phòng và thông tin khách trọ
-                    3. Xóa phòng
-                    4. Số tiền phải trả nếu khách trả phòng
-                    0. Thoát.""");
+                               Menu---------------------
+                               1. Thêm phòng cho thuê
+                               2. Danh sách phòng và thông tin khách trọ
+                               3. Xóa phòng
+                               4. Số tiền phải trả nếu khách trả phòng""");
             System.out.print("Mời bạn chọn: ");
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
@@ -74,8 +68,11 @@ public class Display {
                     System.out.println("Danh sách phòng và thông tin khách trọ:");
                     hotel.display();
                 }
-                case 3 -> checkHotelEmpty();
-                case 4 -> System.out.println(hotel.payRent(checkCCCD()));
+                case 3 -> {
+                    checkHotelEmpty();
+                }
+                case 4 ->System.out.println(hotel.payRent(checkCCCD()));
+
                 case 0 -> System.exit(checkInput);
             }
         } while (true);

@@ -1,6 +1,8 @@
 package model;
 
-public class Hotel {
+import java.io.Serializable;
+
+public class Hotel implements Serializable {
     private int numberOfRentalDays;
     private String typeOfRoom;
     private double roomRates;
