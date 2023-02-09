@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Library {
+public class Library implements Serializable {
     private Student student;
     private LocalDate borrowedDate;
     private int limit;
@@ -54,7 +55,7 @@ public class Library {
     @Override
     public String toString() {
         return "Thư viện : " +
-                student.toString() +
+                student +
                 ", ngày mượn=" + borrowedDate +
                 ", số ngày mượn=" + limit +
                 ", mã số sách=" + idBook+"\n";

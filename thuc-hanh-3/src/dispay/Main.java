@@ -1,6 +1,4 @@
 package dispay;
-
-
 import controller.LibraryManager;
 import model.Library;
 import model.Student;
@@ -27,8 +25,10 @@ public class Main {
             System.out.print("Mời chọn: ");
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
-                case 1 -> library.addNewLibrary(addLibrary());
-                case 2 -> display();
+                case 1 -> {
+                    library.addNewLibrary(addLibrary());
+                }
+                case 2 -> library.displayLibrary();
                 case 3 -> showReturnDueDate();
                 case 0 -> System.out.println("Tạm biệt");
                 default -> System.out.println("Mời bạn nhập lại!");
@@ -60,14 +60,14 @@ public class Main {
         return libraryOne;
     }
 
-    public static void display() {
-        if (libraries.isEmpty()) {
-            System.out.println("Trống............");
-        } else {
-            System.out.println("Danh sách thẻ mượn: ");
-            System.out.println(library.displayLibrary());
-        }
-    }
+//    public static void display() {
+//        if (libraries.isEmpty()) {
+//            System.out.println("Trống............");
+//        } else {
+//            System.out.println("Danh sách thẻ mượn: ");
+//            System.out.println(library.displayLibrary());
+//        }
+//    }
 
     public static void showReturnDueDate() {
         if (libraries.isEmpty()) {

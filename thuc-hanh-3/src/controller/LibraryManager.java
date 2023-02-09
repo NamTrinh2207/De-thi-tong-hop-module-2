@@ -1,6 +1,7 @@
 package controller;
 
 import model.Library;
+import writeReadFile.ReadWriteObject;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
@@ -21,9 +22,14 @@ public class LibraryManager {
     //CRUD LibraryManager-----------------------------------------------
     public void addNewLibrary(Library library){
         libraries.add(library);
+        ReadWriteObject.write(library);
+
     }
-    public String displayLibrary(){
-        return libraries.toString();
+//    public String displayLibrary(){
+//        return libraries.toString();
+//    }
+        public void displayLibrary(){
+        ReadWriteObject.read();
     }
 
     public String showReturnBook(){
@@ -38,5 +44,4 @@ public class LibraryManager {
         }
         return builder.toString();
     }
-
 }
